@@ -3,7 +3,7 @@ package co.com.credilya.solicitudes.api.dto;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-public record SolicitudDTO(
+public record SolicitudResponseDTO(
     Long id,
     String tipoDocumento,
     String numeroDocumento,
