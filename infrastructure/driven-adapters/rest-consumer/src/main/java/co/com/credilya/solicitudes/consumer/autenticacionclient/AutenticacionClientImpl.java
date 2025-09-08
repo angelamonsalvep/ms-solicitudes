@@ -18,9 +18,9 @@ public class AutenticacionClientImpl implements AutenticacionClient, Autenticaci
     public Mono<Boolean> existeUsuario(String tipoDocumento, String numeroDocumento) {
         return webClient.get()
                 .uri(uriBuilder -> uriBuilder
-                        .path("/usuarios/existe")
-                        .queryParam("tipoDocumento", tipoDocumento)
-                        .queryParam("numeroDocumento", numeroDocumento)
+                        .path("/existe")
+                        .queryParam("tipoIdentificacion", tipoDocumento)
+                        .queryParam("numeroIdentificacion", numeroDocumento)
                         .build())
                 .retrieve()
                 .bodyToMono(Boolean.class)

@@ -13,9 +13,13 @@ import reactor.netty.http.client.HttpClient;
 
 import static io.netty.channel.ChannelOption.CONNECT_TIMEOUT_MILLIS;
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Configuration
 public class RestConsumerConfig {
+
+    private static final Logger log = LoggerFactory.getLogger(RestConsumerConfig.class);
 
     private final String url;
 
@@ -25,6 +29,7 @@ public class RestConsumerConfig {
                               @Value("${adapter.restconsumer.timeout}") int timeout) {
         this.url = url;
         this.timeout = timeout;
+        log.info("RestConsumerConfig - URL configurada: {} | Timeout: {}", url, timeout);
     }
 
     @Bean
