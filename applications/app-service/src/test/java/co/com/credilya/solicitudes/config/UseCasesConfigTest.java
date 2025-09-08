@@ -34,6 +34,24 @@ public class UseCasesConfigTest {
         public MyUseCase myUseCase() {
             return new MyUseCase();
         }
+
+        // Bean mock para SolicitudRepository
+        @Bean
+        public co.com.credilya.solicitudes.model.solicitud.gateways.SolicitudRepository solicitudRepository() {
+            return org.mockito.Mockito.mock(co.com.credilya.solicitudes.model.solicitud.gateways.SolicitudRepository.class);
+        }
+
+        // Bean mock para TipoPrestamoRepository
+        @Bean
+        public co.com.credilya.solicitudes.model.tipoprestamo.gateways.TipoPrestamoRepository tipoPrestamoRepository() {
+            return org.mockito.Mockito.mock(co.com.credilya.solicitudes.model.tipoprestamo.gateways.TipoPrestamoRepository.class);
+        }
+
+        // Bean mock para AutenticacionGateway
+        @Bean
+        public co.com.credilya.solicitudes.model.autenticacion.AutenticacionGateway autenticacionGateway() {
+            return org.mockito.Mockito.mock(co.com.credilya.solicitudes.model.autenticacion.AutenticacionGateway.class);
+        }
     }
 
     static class MyUseCase {
