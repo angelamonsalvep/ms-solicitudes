@@ -6,8 +6,7 @@ dependencies {
     implementation 'org.postgresql:r2dbc-postgresql'
     implementation 'org.postgresql:postgresql:42.7.3'
     implementation 'org.reactivecommons.utils:object-mapper-api:0.1.0'
-    implementation 'org.flywaydb:flyway-core:9.22.3'
+    implementation 'org.flywaydb:flyway-core:9.22.1'
 
     testImplementation 'org.reactivecommons.utils:object-mapper:0.1.0'
-    testImplementation 'org.flywaydb:flyway-database-postgresql:9.22.3'
 }
