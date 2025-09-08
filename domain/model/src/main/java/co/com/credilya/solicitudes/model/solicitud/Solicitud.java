@@ -1,4 +1,5 @@
 package co.com.credilya.solicitudes.model.solicitud;
+
 import co.com.credilya.solicitudes.model.tipoprestamo.TipoPrestamo;
 import lombok.Builder;
 import lombok.AllArgsConstructor;

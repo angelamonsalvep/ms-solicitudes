@@ -20,7 +20,7 @@ public class SolicitudRepositoryAdapter
                 .numeroDocumento(entity.getNumeroDocumento())
                 .monto(entity.getMonto())
                 .plazo(entity.getPlazo())
-                .tipoPrestamo(new TipoPrestamo(entity.getId(), "", ""))
+                .tipoPrestamo(entity.getTipoPrestamoId() != null ? Solicitud.builder().tipoPrestamo(new TipoPrestamo(entity.getTipoPrestamoId(), null, null)).build().getTipoPrestamo() : null)
                 .estado(entity.getEstado())
                 .fechaCreacion(entity.getFechaCreacion())
                 .build()
@@ -29,6 +29,18 @@ public class SolicitudRepositoryAdapter
 
     @Override
     public Mono<Solicitud> crearSolicitud(Solicitud solicitud) {
-        return save(solicitud);
+        return save(solicitud)
+            .map(saved -> {
+                solicitud.setId(saved.getId()); // Asigna el id generado
+                return solicitud; // Retorna el objeto original con TipoPrestamo completo
+            });
+    }
+
+    @Override
+    protected SolicitudEntity toData(Solicitud solicitud) {
+        SolicitudEntity entity = super.toData(solicitud);
+        // Asignar tipoPrestamoId manualmente
+        entity.setTipoPrestamoId(solicitud.getTipoPrestamo() != null ? solicitud.getTipoPrestamo().getId() : null);
+        return entity;
     }
 }

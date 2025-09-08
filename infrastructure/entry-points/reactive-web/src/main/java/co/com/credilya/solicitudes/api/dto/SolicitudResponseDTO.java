@@ -11,5 +11,5 @@ public record SolicitudResponseDTO(
     Integer plazo,
     String estado,
     LocalDateTime fechaCreacion,
-    Long tipoPrestamoId
+    TipoPrestamoDTO tipoPrestamo
 ) {}

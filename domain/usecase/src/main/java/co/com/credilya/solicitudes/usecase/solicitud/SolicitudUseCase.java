@@ -39,7 +39,10 @@ public class SolicitudUseCase {
                     }
                     return tipoPrestamoRepository.obtenerTipoPrestamoPorId(sol.getTipoPrestamo().getId())
                             .switchIfEmpty(Mono.error(new TipoPrestamoInvalidoException(sol.getTipoPrestamo().getId())))
-                            .map(tp -> sol);
+                            .map(tp -> {
+                                sol.setTipoPrestamo(tp);
+                                return sol;
+                            });
                 })
                 .flatMap(sol -> {
                     sol.setEstado("Pendiente de revisión");
