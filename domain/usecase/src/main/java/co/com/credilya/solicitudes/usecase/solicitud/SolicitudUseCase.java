@@ -33,9 +33,14 @@ public class SolicitudUseCase {
                     }
                     return Mono.just(solicitud);
                 }))
-                .flatMap(sol -> tipoPrestamoRepository.obtenerTipoPrestamoPorId(sol.getTipoPrestamo().getId())
-                        .switchIfEmpty(Mono.error(new TipoPrestamoInvalidoException(sol.getTipoPrestamo().getId())))
-                        .map(tp -> sol))
+                .flatMap(sol -> {
+                    if (sol.getTipoPrestamo() == null) {
+                        return Mono.error(new TipoPrestamoInvalidoException("TipoPrestamo es null"));
+                    }
+                    return tipoPrestamoRepository.obtenerTipoPrestamoPorId(sol.getTipoPrestamo().getId())
+                            .switchIfEmpty(Mono.error(new TipoPrestamoInvalidoException(sol.getTipoPrestamo().getId())))
+                            .map(tp -> sol);
+                })
                 .flatMap(sol -> {
                     sol.setEstado("Pendiente de revisión");
                     sol.setFechaCreacion(LocalDateTime.now());
