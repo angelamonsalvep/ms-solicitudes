@@ -1,0 +1,35 @@
+[33mcommit 89944b2387e2657122336064743084868950ead4[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/migracion-inicial[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mfeature/repositorios-r2dbc[m[33m, [m[1;32mfeature/excepciones-gateway[m[33m, [m[1;32mfeature/dtos-mappers[m[33m, [m[1;32mfeature/cliente-rest[m[33m, [m[1;32mdevelop[m[33m)[m
+Author: Angela Monsalve <angelapmonsalve@gmail.com>
+Date:   Sun Sep 7 18:54:22 2025 -0500
+
+    feat(api): agrega DTOs y mappers para solicitudes
+
+[33mcommit 37c497a582e9c4fed6185faaa80ba31d548fd2f2[m
+Author: Angela Monsalve <angelapmonsalve@gmail.com>
+Date:   Sun Sep 7 18:54:12 2025 -0500
+
+    feat(rest-consumer): implementa cliente REST para autenticación de usuarios
+
+[33mcommit 1e280d69e1f98670cfc894371d15076bf9ccb0e6[m
+Author: Angela Monsalve <angelapmonsalve@gmail.com>
+Date:   Sun Sep 7 18:53:33 2025 -0500
+
+    feat(domain): agrega gateway de autenticación y excepciones de dominio
+
+[33mcommit 45cf3486c7aaa05981a8aea04092c33f8d965b5f[m
+Author: Angela Monsalve <angelapmonsalve@gmail.com>
+Date:   Sun Sep 7 18:53:19 2025 -0500
+
+    feat(r2dbc): implementa repositorios y adaptadores para solicitud y tipo de préstamo
+
+[33mcommit ec6e9842ac559e7d7a47e57354564b134b19ccd5[m
+Author: Angela Monsalve <angelapmonsalve@gmail.com>
+Date:   Sun Sep 7 18:53:07 2025 -0500
+
+    feat(db): agrega migraciones iniciales y entidades base para solicitud y tipo de préstamo
+
+[33mcommit dad132b05a3c5e2bbdef368b46bc9be306f6dc9c[m
+Author: Angela Monsalve Paez <54193886+angelamonsalvep@users.noreply.github.com>
+Date:   Mon Sep 1 19:20:20 2025 -0500
+
+    Initial commit
